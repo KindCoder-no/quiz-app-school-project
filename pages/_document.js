@@ -12,7 +12,7 @@ export default function Document() {
           crossorigin="anonymous"
         />
       </Head>
-      <body>
+      <body style={{ backgroundColor: "#121212" }}>
         <Main />
         <NextScript />
         <script
