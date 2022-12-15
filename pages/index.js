@@ -1,5 +1,6 @@
 import React from "react";
 import QuestionsView from "../components/QuestionsView";
+import ResultsView from "../components/ResultsView";
 import questions from "../data/questions.json";
 
 export default function HomePage() {
@@ -69,7 +70,7 @@ export default function HomePage() {
   return (
     <>
       {showFinish ? (
-        <p className="text-white">{results}</p>
+        <ResultsView questions={questions} result={results} />
       ) : (
         <QuestionsView
           question={questions[currentQuestionIndex]}
