@@ -3,7 +3,7 @@ import QuestionsView from "../components/QuestionsView";
 import questions from "../data/questions.json";
 
 export default function HomePage() {
-  console.log(questions);
+  //console.log(questions);
 
   const [currentQuestionIndex, setCurrentQuestionIndex] = React.useState(0);
   const [buttonsDisabled, setButtonsDisabled] = React.useState(false);
@@ -14,16 +14,19 @@ export default function HomePage() {
     "primary"
   ]);
   const [results, setResults] = React.useState([]);
+  const [showFinish, setShowFinish] = React.useState(false);
 
   const nextQuestion = () => {
     setButtonColors(["primary", "primary", "primary", "primary"]);
     setButtonsDisabled(false);
     if (!(currentQuestionIndex == questions.length - 1)) {
       setCurrentQuestionIndex(currentQuestionIndex + 1);
+    } else {
+      setShowFinish(true);
     }
   };
   const selectAnswer = (index) => {
-    console.log(index);
+    //console.log(index);
     setButtonsDisabled(true);
     var currentQuestion = questions[currentQuestionIndex];
 
@@ -52,8 +55,9 @@ export default function HomePage() {
     }
 
     //if (currentQuestion.correctIndex == index) {
-    var re;
-    setResults();
+
+    setResults((prevArray) => [...prevArray, currentQuestion.answers[index]]);
+
     //}
 
     setButtonColors(pushArray);
@@ -64,14 +68,17 @@ export default function HomePage() {
   };
   return (
     <>
-      <QuestionsView
-        question={questions[currentQuestionIndex]}
-        selectAnswer={selectAnswer}
-        buttonsDisabled={buttonsDisabled}
-        buttonColors={buttonColors}
-        nextQuestion={nextQuestion}
-      />
-      <p>{results}</p>
+      {showFinish ? (
+        <p className="text-white">{results}</p>
+      ) : (
+        <QuestionsView
+          question={questions[currentQuestionIndex]}
+          selectAnswer={selectAnswer}
+          buttonsDisabled={buttonsDisabled}
+          buttonColors={buttonColors}
+          nextQuestion={nextQuestion}
+        />
+      )}
     </>
   );
 }
