@@ -9,11 +9,18 @@ const ResultsView = ({ questions, result }) => {
     });
     if (results == questions[index].correctIndex) {
       totalPoints += 1;
-      questionsResult.push({ question: questions[index].title, correct: true });
+      questionsResult.push({
+        question: questions[index].title,
+        correct: true,
+        correctAnswer: questions[index].answers[questions[index].correctIndex],
+        answer: data
+      });
     } else {
       questionsResult.push({
         question: questions[index].title,
-        correct: false
+        correct: false,
+        correctAnswer: questions[index].answers[questions[index].correctIndex],
+        answer: data
       });
     }
   });
@@ -24,15 +31,42 @@ const ResultsView = ({ questions, result }) => {
         <div class="d-flex flex-grow-1 justify-content-center align-items-center">
           <div className="col-12">
             <h1 className="text-center text-white">Resultat</h1>
-            <p className="text-center text-white">Poeng: {totalPoints}</p>
-            <div className="text-center">
-              {questionsResult.map((data) => {
-                if (data.correct == true) {
-                  return <p style={{ color: "green" }}>{data.question}</p>;
-                } else {
-                  return <p style={{ color: "red" }}>{data.question}</p>;
-                }
-              })}
+            <h2 className="text-center text-white">
+              {totalPoints}/{questions.length} riktig
+            </h2>
+            <br></br>
+            <div className="row justify-content-center">
+              <div className="col-6 text-center">
+                {questionsResult.map((data) => {
+                  if (data.correct == true) {
+                    return (
+                      <>
+                        <div className="card">
+                          <div className="card-body">
+                            <p style={{ color: "green" }}>{data.question}</p>
+                            <p>Riktig svar: {data.correctAnswer}</p>
+                            <p>Ditt svar: {data.answer}</p>
+                          </div>
+                        </div>
+                        <br></br>
+                      </>
+                    );
+                  } else {
+                    return (
+                      <>
+                        <div className="card">
+                          <div className="card-body">
+                            <p style={{ color: "red" }}>{data.question}</p>
+                            <p>Riktig svar: {data.correctAnswer}</p>
+                            <p>Ditt svar: {data.answer}</p>
+                          </div>
+                        </div>
+                        <br></br>
+                      </>
+                    );
+                  }
+                })}
+              </div>
             </div>
           </div>
         </div>

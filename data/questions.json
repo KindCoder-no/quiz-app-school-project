@@ -1,14 +1,17 @@
 [
   {
-    "title": "Hvor fort har du lov til å kjøre i en 60 sone",
-    "description": "",
-    "answers": ["230 km/h", "180 km/h", "90 km/h", "60 km/h"],
-    "correctIndex": 3
+    "title": "Når ble Facebook lansert?",
+    "answers": ["2004", "2006", "2002", "2008"],
+    "correctIndex": 0
   },
   {
-    "title": "Hvor fort har du lov til å kjøre i en 60 sone",
-    "description": "",
-    "answers": ["280 km/h", "180 km/h", "90 km/h", "60 km/h"],
-    "correctIndex": 3
+    "title": "Når ble Spotify lansert?",
+    "answers": ["2011", "2006", "2008", "2003"],
+    "correctIndex": 2
+  },
+  {
+    "title": "Når ble React lansert?",
+    "answers": ["2019", "2013", "2017", "2015"],
+    "correctIndex": 1
   }
 ]
