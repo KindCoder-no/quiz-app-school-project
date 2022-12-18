@@ -19,13 +19,9 @@ export default function Custom() {
     }
 
     setQuestions(currentQuestionData);
-
-    console.log(questions);
   };
 
   const addQuestion = () => {
-    var currentQuestionData = questions;
-
     var newData = {
       title: "",
       answers: ["", "", "", ""],
@@ -33,8 +29,6 @@ export default function Custom() {
     };
 
     setQuestions((prevArray) => [...prevArray, newData]);
-
-    console.log(questions);
   };
 
   return (
