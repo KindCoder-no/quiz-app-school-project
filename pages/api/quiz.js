@@ -8,7 +8,7 @@ export default async function Handler(req, res) {
   }
 
   const path = "./data/" + id + ".json";
-  const path2 = "../../data/" + id + ".json";
+
   fs.access(path, fs.F_OK, (err) => {
     if (err) {
       console.error(err);
