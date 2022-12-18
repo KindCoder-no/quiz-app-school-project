@@ -54,15 +54,7 @@ export default function HomePage() {
 
     var pushArray = buttonColors;
 
-    if (currentQuestion.correctIndex == 0) {
-      pushArray[0] = "success";
-    } else if (currentQuestion.correctIndex == 1) {
-      pushArray[1] = "success";
-    } else if (currentQuestion.correctIndex == 2) {
-      pushArray[2] = "success";
-    } else if (currentQuestion.correctIndex == 3) {
-      pushArray[3] = "success";
-    }
+    pushArray[currentQuestion.correctIndex] = "success";
 
     if (currentQuestion.correctIndex != index) {
       if (index == 0) {
