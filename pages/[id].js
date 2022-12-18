@@ -36,7 +36,7 @@ export default function HomePage() {
           console.log(data);
         });
     }
-  }, [router.isReady]);
+  }, [router.isReady, id]);
 
   const nextQuestion = () => {
     setButtonColors(["primary", "primary", "primary", "primary"]);
