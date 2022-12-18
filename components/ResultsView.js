@@ -36,7 +36,7 @@ const ResultsView = ({ questions, result }) => {
             </h2>
             <div className="mt-5"></div>
             <div className="row justify-content-center">
-              <div className="col-6 text-center">
+              <div className="col-md-6 text-center">
                 {questionsResult.map((data) => {
                   if (data.correct == true) {
                     return (
