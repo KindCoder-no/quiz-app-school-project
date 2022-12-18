@@ -12,7 +12,7 @@ export default function HomePage() {
             <h1 className="text-center text-white">Velg Quiz</h1>
             <br></br>
             <div className="row justify-content-center">
-              <div className="col-md-2">
+              <div className="col-md-4">
                 <button
                   className="btn btn-primary w-100"
                   onClick={() => Router.push("/development")}
@@ -23,7 +23,7 @@ export default function HomePage() {
             </div>
             <br></br>
             <div className="row justify-content-center">
-              <div className="col-md-2">
+              <div className="col-md-4">
                 <button
                   className="btn btn-secondary w-100"
                   onClick={() => Router.push("/custom")}
