@@ -1,0 +1,87 @@
+[
+  {
+    "title": "Hvilket land er den største eksportøren av falske tenner?",
+    "answers": ["Norge", "Malta", "Sverige", "Liechtenstein"],
+    "correctIndex": 3
+  },
+  {
+    "title": "Hva betyr ordet «idiot» opprinnelig?",
+    "answers": [
+      "En som ikke er politiker",
+      "En med lav IQ",
+      "En som hadde mistet håret",
+      "En som ikke hadde egen eiendom"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "title": "Hvorfor fikk den første regissøren av filmen haisommer sparken?",
+    "answers": [
+      "Fordi han stjal fra skuespillerne",
+      "Fordi han hele tiden kalte haien for en hval",
+      "Fordi han gikk ut med nazistiske synspunkter i media",
+      "Fordi han hadde løyet på CV-en"
+    ],
+    "correctIndex": 1
+  },
+  {
+    "title": "Hva er den grønne mystiske koden man ser i filmen «Matrix»?",
+    "answers": [
+      "Regissørens dagbok",
+      "En kode ingen menneske noensinne har løst",
+      "Avslutningen av filmen blir avslørt i hver kode",
+      "Sushi-oppskrift"
+    ],
+    "correctIndex": 3
+  },
+  {
+    "title": "Hva har skjedd med «Lego-figurene» de siste årene?",
+    "answers": [
+      "De har blitt surere i ansiktet",
+      "De har blitt tynnere",
+      "De har blitt høyere",
+      "Ingenting"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "title": "Hvor mange ganger puster mennesker i løpet av livet, sånn omtrent?",
+    "answers": [
+      "50 millioner ganger",
+      "850 millioner ganger",
+      "100 millioner ganger",
+      "1,2 milliarder ganger"
+    ],
+    "correctIndex": 1
+  },
+  {
+    "title": "Hvor stor prosent av Sahara er sand?",
+    "answers": ["Alt", "Ingeting", "20 prosent", "80 prosent"],
+    "correctIndex": 2
+  },
+  {
+    "title": "Hvor er menneske på næringskjeden?",
+    "answers": ["Øverst", "Nederst", "Nær midten", "Ingen vet"],
+    "correctIndex": 2
+  },
+  {
+    "title": "Hvordan ble lyden til «Chewbacca» i «Star Wars» laget?",
+    "answers": [
+      "Ved å dra en stol bortover gulvet",
+      "En gammel telefonsvarer",
+      "Ingen vet",
+      "Ved å kombinere 4 ulike dyrelyder"
+    ],
+    "correctIndex": 3
+  },
+  {
+    "title": "Hva er den vanligste setningen i Harry Potter-bøkene?",
+    "answers": [
+      "«Harry Potter kom ned trappa»",
+      "«Ingenting skjedde»",
+      "«Ved Merlins skjegg»",
+      "«Humlesnurr gikk sakte forbi»"
+    ],
+    "correctIndex": 1
+  }
+]

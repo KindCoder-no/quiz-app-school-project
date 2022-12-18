@@ -17,6 +17,13 @@ export default function HomePage() {
                 >
                   Utvikling
                 </button>
+                <div className="mt-3"></div>
+                <button
+                  className="btn btn-primary w-100"
+                  onClick={() => Router.push("/random")}
+                >
+                  Random
+                </button>
               </div>
             </div>
             <div className="mt-5"></div>
