@@ -24,7 +24,12 @@ export default function HomePage() {
             <br></br>
             <div className="row justify-content-center">
               <div className="col-md-2">
-                <button className="btn btn-secondary w-100">Egen Quiz</button>
+                <button
+                  className="btn btn-secondary w-100"
+                  onClick={() => Router.push("/custom")}
+                >
+                  Egen Quiz
+                </button>
               </div>
             </div>
           </div>
