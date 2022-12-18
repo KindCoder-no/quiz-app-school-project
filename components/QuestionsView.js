@@ -12,8 +12,12 @@ const QuestionsView = ({
     <div className="container d-flex flex-column min-vh-100">
       <div class="d-flex flex-grow-1 justify-content-center align-items-center">
         <div className="col-12">
+          <h2 className="text-center text-white">
+            {questionData.currentQuestionIndex + 1}/
+            {questionData.questions.length}
+          </h2>
           <h1 className="text-center text-white">{question.title}</h1>
-          <p className="text-center text-white">{question.description}</p>
+
           <div className="row justify-content-center">
             <div className="col-md-4 p-2">
               <button
