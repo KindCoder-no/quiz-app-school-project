@@ -47,8 +47,8 @@ export default function HomePage() {
       setShowFinish(true);
     }
   };
+
   const selectAnswer = (index) => {
-    //console.log(index);
     setButtonsDisabled(true);
     var currentQuestion = questions[currentQuestionIndex];
 
@@ -75,18 +75,11 @@ export default function HomePage() {
       }
     }
 
-    //if (currentQuestion.correctIndex == index) {
-
+    // Update data
     setResults((prevArray) => [...prevArray, currentQuestion.answers[index]]);
-
-    //}
-
     setButtonColors(pushArray);
-
-    if (!(currentQuestionIndex == questions.length - 1)) {
-      //setCurrentQuestionIndex(currentQuestionIndex + 1);
-    }
   };
+
   return (
     <>
       {showFinish ? (
