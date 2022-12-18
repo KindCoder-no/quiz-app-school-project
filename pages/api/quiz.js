@@ -1,34 +1,22 @@
-const fs = require("fs");
+const fs = require("fs").promises;
 
 export default async function Handler(req, res) {
-  const { id } = req.query;
+  try {
+    const { id } = req.query;
 
-  if (!id) {
-    return res.json({ error: true });
-  }
-
-  const path = "./data/" + id + ".json";
-
-  fs.access(path, fs.F_OK, (err) => {
-    if (err) {
-      console.error(err);
-      exists = false;
-      res.json({ error: true, exists });
-    } else {
-      console.log("Exist");
-      fs.readFile(path, (err, data) => {
-        if (err) {
-          console.error(err);
-          return;
-        }
-        exists = true;
-        console.log(JSON.parse(data));
-        res.json({ error: false, exists, questions: JSON.parse(data) });
-      });
+    if (!id) {
+      return res.json({ error: true });
     }
 
-    //file exists
-  });
+    const path = "./data/" + id + ".json";
 
-  console.log(exists);
+    await fs.access(path, fs.F_OK);
+    // If the file does not exist, the cath error function stuff will run
+
+    const data = await fs.readFile(path);
+    res.json({ error: false, questions: JSON.parse(data) });
+  } catch (error) {
+    console.error(error);
+    res.json({ error: true });
+  }
 }
