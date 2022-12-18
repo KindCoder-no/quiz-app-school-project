@@ -1,8 +1,14 @@
+import Router, { useRouter } from "next/router";
 import React from "react";
+
 import QuestionsView from "../components/QuestionsView";
 import ResultsView from "../components/ResultsView";
 
-export default function HomePage({ questions }) {
+export default function HomePage() {
+  const router = useRouter();
+  const { id } = router.query;
+
+  const [questions, setQuestions] = React.useState([]);
   const [currentQuestionIndex, setCurrentQuestionIndex] = React.useState(0);
   const [buttonsDisabled, setButtonsDisabled] = React.useState(false);
   const [buttonColors, setButtonColors] = React.useState([
@@ -13,6 +19,24 @@ export default function HomePage({ questions }) {
   ]);
   const [results, setResults] = React.useState([]);
   const [showFinish, setShowFinish] = React.useState(false);
+
+  React.useEffect(() => {
+    if (router.isReady) {
+      console.log(id);
+      fetch("/api/quiz?id=" + id)
+        .then((response) => response.json())
+        .then((data) => {
+          if (data.error == true) {
+            if (data.exists == false) {
+              Router.push("/");
+            }
+          } else {
+            setQuestions(data.questions);
+          }
+          console.log(data);
+        });
+    }
+  }, [router.isReady]);
 
   const nextQuestion = () => {
     setButtonColors(["primary", "primary", "primary", "primary"]);
@@ -81,28 +105,4 @@ export default function HomePage({ questions }) {
       )}
     </>
   );
-}
-
-export async function getServerSideProps({ query }) {
-  const fs = require("fs");
-
-  const path = "./data/" + query.id + ".json";
-
-  var exists = fs.access(path, fs.F_OK, (err) => {
-    if (err) {
-      console.error(err);
-      return false;
-    } else {
-      return true;
-    }
-
-    //file exists
-  });
-
-  console.log(exists);
-  return {
-    props: {
-      questions: []
-    } // will be passed to the page component as props
-  };
 }
