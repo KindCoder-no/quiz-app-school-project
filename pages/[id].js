@@ -57,14 +57,21 @@ export default function HomePage() {
     pushArray[currentQuestion.correctIndex] = "success";
 
     if (currentQuestion.correctIndex != index) {
-      if (index == 0) {
-        pushArray[0] = "danger";
-      } else if (index == 1) {
-        pushArray[1] = "danger";
-      } else if (index == 2) {
-        pushArray[2] = "danger";
-      } else if (index == 3) {
-        pushArray[3] = "danger";
+      switch (index) {
+        case 0:
+          pushArray[0] = "danger";
+          break;
+        case 1:
+          pushArray[1] = "danger";
+          break;
+        case 2:
+          pushArray[2] = "danger";
+          break;
+        case 3:
+          pushArray[3] = "danger";
+          break;
+        default:
+          break;
       }
     }
 
