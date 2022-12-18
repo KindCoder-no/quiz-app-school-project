@@ -1,24 +1,26 @@
 const fs = require("fs");
 
-export default function Hander(req, res) {
+export default async function Hander(req, res) {
   if (req.method == "POST") {
     console.log(req.body);
+    var currentTimestamp = Date.now();
 
-    let fileName = Date.now();
+    try {
+      fs.writeFile(
+        `./data/${currentTimestamp}.json`,
+        JSON.stringify(req.body.questions),
+        {
+          encoding: "utf8",
+          flag: "w",
+          mode: 0o666
+        },
+        (err) => {}
+      );
 
-    fs.writeFile(
-      "./data/" + fileName + ".json",
-      JSON.stringify(req.body.questions),
-      {
-        encoding: "utf8",
-        flag: "w",
-        mode: 0o666
-      },
-      (err) => {
-        if (err) console.log(err);
-      }
-    );
-
-    res.json({ fileName: fileName });
+      res.json({ error: false, fileName: currentTimestamp });
+    } catch (err) {
+      console.log(err);
+      res.json({ error: true });
+    }
   }
 }

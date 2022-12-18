@@ -37,14 +37,15 @@ export default function Custom() {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
-        // 'Content-Type': 'application/x-www-form-urlencoded',
       },
       body: JSON.stringify({ questions: questions })
     })
       .then((response) => response.json())
       .then((data) => {
-        Router.push("/" + data.fileName);
         console.log(data);
+        if (data.error == false) {
+          Router.push("/" + data.fileName);
+        }
       });
   };
 
@@ -52,11 +53,11 @@ export default function Custom() {
     <>
       <div className="container">
         <div className="mt-5"></div>
-
         <div className="row justify-content-center">
           <div className="col-md-6">
             <div className="card">
               <h1 className="text-center">Lag din egen Quiz!</h1>
+              <div className="mt-5"></div>
               <div className="row justify-content-center">
                 <div className="col-8">
                   {questions.map((data, index) => {
@@ -75,7 +76,7 @@ export default function Custom() {
                       </>
                     );
                   })}
-                  <br></br>
+                  <div className="mt-5"></div>
                   <div className="row">
                     <div className="col-6">
                       <button
@@ -94,7 +95,7 @@ export default function Custom() {
                       </button>
                     </div>
                   </div>
-                  <br></br>
+                  <div className="mt-3"></div>
                 </div>
               </div>
             </div>
