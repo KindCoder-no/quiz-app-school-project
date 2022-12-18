@@ -7,8 +7,6 @@ export default async function Handler(req, res) {
     return res.json({ error: true });
   }
 
-  var exists;
-
   const path = "./data/" + id + ".json";
   const path2 = "../../data/" + id + ".json";
   fs.access(path, fs.F_OK, (err) => {
@@ -25,7 +23,7 @@ export default async function Handler(req, res) {
         }
         exists = true;
         console.log(JSON.parse(data));
-        res.json({ monke: "Monke", exists, questions: JSON.parse(data) });
+        res.json({ error: false, exists, questions: JSON.parse(data) });
       });
     }
 
