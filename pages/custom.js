@@ -1,3 +1,4 @@
+import Router from "next/router";
 import React from "react";
 import AnswerFormItem from "../components/AnswerFormItem";
 import QuestionFormItem from "../components/QuestionFormItem";
@@ -29,6 +30,22 @@ export default function Custom() {
     };
 
     setQuestions((prevArray) => [...prevArray, newData]);
+  };
+
+  const createQuiz = () => {
+    fetch("/api/new-quiz", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+        // 'Content-Type': 'application/x-www-form-urlencoded',
+      },
+      body: JSON.stringify({ questions: questions })
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        Router.push("/" + data.fileName);
+        console.log(data);
+      });
   };
 
   return (
@@ -69,7 +86,10 @@ export default function Custom() {
                       </button>
                     </div>
                     <div className="col-6">
-                      <button className="btn btn-success w-100">
+                      <button
+                        className="btn btn-success w-100"
+                        onClick={createQuiz}
+                      >
                         Opprett Quiz
                       </button>
                     </div>
