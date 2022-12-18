@@ -12,7 +12,13 @@ export default function Document() {
           crossorigin="anonymous"
         />
       </Head>
-      <body style={{ backgroundColor: "#121212" }}>
+      <body
+        style={{
+          background: "rgb(2,0,36)",
+          background:
+            "linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 51%, rgba(0,212,255,1) 100%)"
+        }}
+      >
         <Main />
         <NextScript />
         <script
