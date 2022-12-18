@@ -34,7 +34,7 @@ const ResultsView = ({ questions, result }) => {
             <h2 className="text-center text-white">
               {totalPoints}/{questions.length} riktig
             </h2>
-            <br></br>
+            <div className="mt-5"></div>
             <div className="row justify-content-center">
               <div className="col-6 text-center">
                 {questionsResult.map((data) => {
@@ -48,7 +48,7 @@ const ResultsView = ({ questions, result }) => {
                             <p>Ditt svar: {data.answer}</p>
                           </div>
                         </div>
-                        <br></br>
+                        <div className="mt-3"></div>
                       </>
                     );
                   } else {
@@ -61,7 +61,7 @@ const ResultsView = ({ questions, result }) => {
                             <p>Ditt svar: {data.answer}</p>
                           </div>
                         </div>
-                        <br></br>
+                        <div className="mt-3"></div>
                       </>
                     );
                   }
