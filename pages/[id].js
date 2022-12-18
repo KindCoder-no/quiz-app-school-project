@@ -88,6 +88,7 @@ export default function HomePage() {
         questions.length > 0 && (
           <QuestionsView
             question={questions[currentQuestionIndex]}
+            questionData={{ questions, currentQuestionIndex }}
             selectAnswer={selectAnswer}
             buttonsDisabled={buttonsDisabled}
             buttonColors={buttonColors}

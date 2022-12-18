@@ -4,6 +4,7 @@ const QuestionsView = ({
   question,
   selectAnswer,
   buttonsDisabled,
+  questionData,
   buttonColors,
   nextQuestion
 }) => {
@@ -62,7 +63,12 @@ const QuestionsView = ({
                   className="btn btn-primary w-100"
                   onClick={nextQuestion}
                 >
-                  <h3>Neste Spørsmål</h3>
+                  {questionData.questions.length - 1 ==
+                  questionData.currentQuestionIndex ? (
+                    <h3>Se Resultat</h3>
+                  ) : (
+                    <h3>Neste Spørsmål</h3>
+                  )}
                 </button>
               </div>
             </div>
