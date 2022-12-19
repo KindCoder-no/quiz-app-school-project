@@ -41,9 +41,9 @@ const ResultsView = ({ questions, result }) => {
               <div className="col-md-6 text-center">
                 {questionsResult.map((data) => {
                   if (data.correct == true) {
-                    return <Answer color="#90ee90" data={data} />;
+                    return <Answer color="success" data={data} />;
                   } else {
-                    return <Answer color="red" data={data} />;
+                    return <Answer color="danger" data={data} />;
                   }
                 })}
               </div>
