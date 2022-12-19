@@ -13,6 +13,8 @@ Hvordan du bruker utviklingsspråket. Hvordan du manipulerer og henter DOM objek
 ![image](https://user-images.githubusercontent.com/8614145/205267181-51408e62-3984-47bd-82af-f3aee883a918.png)
 
 ## Sette opp prosjekt
+### Requirements
+- [Node.js](https://nodejs.org/en/)
 
 Dette er et Next.JS prosjekt. For å sette opp start med å åpne mappen i cmd og skriv:
 
