@@ -12,6 +12,9 @@ Hvordan du bruker utviklingsspråket. Hvordan du manipulerer og henter DOM objek
 
 ![image](https://user-images.githubusercontent.com/8614145/205267181-51408e62-3984-47bd-82af-f3aee883a918.png)
 
+# Prosjekt
+Du kan se planen for prosjektet [her](https://github.com/Cha-IT/quiz-app-KindCoder-no/blob/main/PLAN.md)
+
 ## Sette opp prosjekt
 ### Requirements
 - [Node.js](https://nodejs.org/en/)
