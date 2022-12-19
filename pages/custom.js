@@ -1,4 +1,4 @@
-import Router from "next/router";
+import Link from "next/link";
 import React from "react";
 import AnswerFormItem from "../components/AnswerFormItem";
 import QuestionFormItem from "../components/QuestionFormItem";
@@ -7,6 +7,7 @@ export default function Custom() {
   const [questions, setQuestions] = React.useState([
     { title: "", answers: ["", "", "", ""], correctIndex: 0 }
   ]);
+  const [createdId, setCreatedId] = React.useState();
 
   const updateQuestion = (index, item, data, answersIndex) => {
     var currentQuestionData = questions;
@@ -44,7 +45,7 @@ export default function Custom() {
       .then((data) => {
         console.log(data);
         if (data.error == false) {
-          Router.push("/" + data.fileName);
+          setCreatedId(data.fileName);
         }
       });
   };
@@ -63,46 +64,62 @@ export default function Custom() {
             >
               <h1 className="text-center text-white">Lag din egen Quiz!</h1>
               <div className="mt-5"></div>
-              <div className="row justify-content-center">
-                <div className="col-8">
-                  {questions.map((data, index) => {
-                    return (
-                      <>
-                        <h3 className="text-white">Spørsmål {index + 1}</h3>
-                        <QuestionFormItem
-                          title="Spørsmål"
-                          index={index}
-                          updateQuestion={updateQuestion}
-                        />
-                        <AnswerFormItem
-                          index={index}
-                          updateQuestion={updateQuestion}
-                        />
-                      </>
-                    );
-                  })}
-                  <div className="mt-5"></div>
-                  <div className="row">
-                    <div className="col-6">
-                      <button
-                        className="btn btn-primary w-100"
-                        onClick={addQuestion}
-                      >
-                        Legg til spørsmål
-                      </button>
+              {createdId ? (
+                <>
+                  <p className="text-center text-white">
+                    Quiz opprettet. Del linken med dine venner:<br></br>
+                    <Link
+                      href={"/" + createdId}
+                      className="text-center text-white"
+                    >
+                      http://localhost:3000/{createdId}
+                    </Link>
+                  </p>
+                  <br></br>
+                  <p></p>
+                </>
+              ) : (
+                <div className="row justify-content-center">
+                  <div className="col-8">
+                    {questions.map((data, index) => {
+                      return (
+                        <>
+                          <h3 className="text-white">Spørsmål {index + 1}</h3>
+                          <QuestionFormItem
+                            title="Spørsmål"
+                            index={index}
+                            updateQuestion={updateQuestion}
+                          />
+                          <AnswerFormItem
+                            index={index}
+                            updateQuestion={updateQuestion}
+                          />
+                        </>
+                      );
+                    })}
+                    <div className="mt-5"></div>
+                    <div className="row">
+                      <div className="col-6">
+                        <button
+                          className="btn btn-primary w-100"
+                          onClick={addQuestion}
+                        >
+                          Legg til spørsmål
+                        </button>
+                      </div>
+                      <div className="col-6">
+                        <button
+                          className="btn btn-success w-100"
+                          onClick={createQuiz}
+                        >
+                          Opprett Quiz
+                        </button>
+                      </div>
                     </div>
-                    <div className="col-6">
-                      <button
-                        className="btn btn-success w-100"
-                        onClick={createQuiz}
-                      >
-                        Opprett Quiz
-                      </button>
-                    </div>
+                    <div className="mt-3"></div>
                   </div>
-                  <div className="mt-3"></div>
                 </div>
-              </div>
+              )}
             </div>
             <div className="mt-5"></div>
           </div>
