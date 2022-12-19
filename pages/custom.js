@@ -55,15 +55,22 @@ export default function Custom() {
         <div className="mt-5"></div>
         <div className="row justify-content-center">
           <div className="col-md-6">
-            <div className="card">
-              <h1 className="text-center">Lag din egen Quiz!</h1>
+            <div
+              style={{
+                background: "rgb(0,212,255)",
+                background:
+                  "linear-gradient(90deg, rgba(0,212,255,1) 0%, rgba(15,15,168,1) 50%, rgba(11,3,181,1) 100%)",
+                borderRadius: 10
+              }}
+            >
+              <h1 className="text-center text-white">Lag din egen Quiz!</h1>
               <div className="mt-5"></div>
               <div className="row justify-content-center">
                 <div className="col-8">
                   {questions.map((data, index) => {
                     return (
                       <>
-                        <h3>Spørsmål {index + 1}</h3>
+                        <h3 className="text-white">Spørsmål {index + 1}</h3>
                         <QuestionFormItem
                           title="Spørsmål"
                           index={index}

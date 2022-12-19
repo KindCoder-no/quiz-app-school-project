@@ -1,3 +1,5 @@
+import Answer from "./Answer";
+
 const ResultsView = ({ questions, result }) => {
   var totalPoints = 0;
 
@@ -39,31 +41,9 @@ const ResultsView = ({ questions, result }) => {
               <div className="col-md-6 text-center">
                 {questionsResult.map((data) => {
                   if (data.correct == true) {
-                    return (
-                      <>
-                        <div className="card">
-                          <div className="card-body">
-                            <p style={{ color: "green" }}>{data.question}</p>
-                            <p>Riktig svar: {data.correctAnswer}</p>
-                            <p>Ditt svar: {data.answer}</p>
-                          </div>
-                        </div>
-                        <div className="mt-3"></div>
-                      </>
-                    );
+                    return <Answer color="#90ee90" data={data} />;
                   } else {
-                    return (
-                      <>
-                        <div className="card">
-                          <div className="card-body">
-                            <p style={{ color: "red" }}>{data.question}</p>
-                            <p>Riktig svar: {data.correctAnswer}</p>
-                            <p>Ditt svar: {data.answer}</p>
-                          </div>
-                        </div>
-                        <div className="mt-3"></div>
-                      </>
-                    );
+                    return <Answer color="red" data={data} />;
                   }
                 })}
               </div>

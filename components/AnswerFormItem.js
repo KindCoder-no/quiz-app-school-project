@@ -1,13 +1,13 @@
 export default function AnswerFormItem({ index, updateQuestion }) {
   return (
     <>
-      <div class="mb-3">
-        <label for="exampleInputEmail1" class="form-label">
+      <div className="mb-3">
+        <label for="exampleInputEmail1" className="form-label text-white">
           Svaralternativ 1
         </label>
         <input
           type="text"
-          class="form-control"
+          className="form-control"
           id="exampleInputEmail1"
           aria-describedby="emailHelp"
           onChange={(e) => {
@@ -15,13 +15,13 @@ export default function AnswerFormItem({ index, updateQuestion }) {
           }}
         />
       </div>
-      <div class="mb-3">
-        <label for="exampleInputEmail1" class="form-label">
+      <div className="mb-3">
+        <label for="exampleInputEmail1" className="form-label text-white">
           Svaralternativ 2
         </label>
         <input
           type="text"
-          class="form-control"
+          className="form-control"
           id="exampleInputEmail1"
           aria-describedby="emailHelp"
           onChange={(e) => {
@@ -29,13 +29,13 @@ export default function AnswerFormItem({ index, updateQuestion }) {
           }}
         />
       </div>
-      <div class="mb-3">
-        <label for="exampleInputEmail1" class="form-label">
+      <div className="mb-3">
+        <label for="exampleInputEmail1" className="form-label text-white">
           Svaralternativ 3
         </label>
         <input
           type="text"
-          class="form-control"
+          className="form-control"
           id="exampleInputEmail1"
           aria-describedby="emailHelp"
           onChange={(e) => {
@@ -43,13 +43,13 @@ export default function AnswerFormItem({ index, updateQuestion }) {
           }}
         />
       </div>
-      <div class="mb-3">
-        <label for="exampleInputEmail1" class="form-label">
+      <div className="mb-3">
+        <label for="exampleInputEmail1" className="form-label text-white">
           Svaralternativ 4
         </label>
         <input
           type="text"
-          class="form-control"
+          className="form-control"
           id="exampleInputEmail1"
           aria-describedby="emailHelp"
           onChange={(e) => {
@@ -57,12 +57,12 @@ export default function AnswerFormItem({ index, updateQuestion }) {
           }}
         />
       </div>
-      <div class="mb-3">
-        <label for="select" class="form-label">
+      <div className="mb-3">
+        <label for="select" className="form-label text-white">
           Riktig svar:
         </label>
         <select
-          class="form-select"
+          className="form-select"
           id="select"
           onChange={(e) => {
             updateQuestion(index, "Correct", e.target.value);
