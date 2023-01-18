@@ -39,11 +39,11 @@ const ResultsView = ({ questions, result }) => {
             <div className="mt-5"></div>
             <div className="row justify-content-center">
               <div className="col-md-6 text-center">
-                {questionsResult.map((data) => {
+                {questionsResult.map((data, key) => {
                   if (data.correct == true) {
-                    return <Answer color="success" data={data} />;
+                    return <Answer key={key} color="success" data={data} />;
                   } else {
-                    return <Answer color="danger" data={data} />;
+                    return <Answer key={key} color="danger" data={data} />;
                   }
                 })}
               </div>

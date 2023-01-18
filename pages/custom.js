@@ -72,7 +72,7 @@ export default function Custom() {
                       href={"/" + createdId}
                       className="text-center text-white"
                     >
-                      http://localhost:3000/{createdId}
+                      {window.location.hostname}/{createdId}
                     </Link>
                   </p>
                   <br></br>
