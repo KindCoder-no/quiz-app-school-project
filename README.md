@@ -1,5 +1,3 @@
-[![Open in Visual Studio Code](https://classroom.github.com/assets/open-in-vscode-c66648af7eb3fe8bc4f294546bfd86ef473780cde1dea487d3c4ff354943c9ae.svg)](https://classroom.github.com/online_ide?assignment_repo_id=9549378&assignment_repo_type=AssignmentRepo)
-
 # Quiz-app
 
 Mål: I perioden fremover mot jul skal vi utvikle en egen Quiz-app. Utviklingen av quizen skal gjennomføres individuelt og har innlevering i uke 50.
@@ -13,10 +11,13 @@ Hvordan du bruker utviklingsspråket. Hvordan du manipulerer og henter DOM objek
 ![image](https://user-images.githubusercontent.com/8614145/205267181-51408e62-3984-47bd-82af-f3aee883a918.png)
 
 # Prosjekt
-Du kan se planen for prosjektet [her](https://github.com/Cha-IT/quiz-app-KindCoder-no/blob/main/PLAN.md)
+
+Du kan se planen for prosjektet [her](https://github.com/KindCoder-no/quiz-app-school-project/quiz-app-KindCoder-no/blob/main/PLAN.md)
 
 ## Sette opp prosjekt
+
 ### Requirements
+
 - [Node.js](https://nodejs.org/en/)
 
 Dette er et Next.JS prosjekt. For å sette opp start med å åpne mappen i cmd og skriv:
